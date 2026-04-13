@@ -1,0 +1,28 @@
+{
+  "name": "qos-claude-code",
+  "version": "2.1.1",
+  "description": "Claude Code plugin for Qualixar OS — submit tasks, browse workspaces, manage agents",
+  "keywords": [
+    "qualixar-os",
+    "claude-code",
+    "ai-agents",
+    "orchestration",
+    "qos-compatible",
+    "openclaw",
+    "claw-compatible"
+  ],
+  "license": "FSL-1.1-ALv2",
+  "author": "qualixar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qualixar/qualixar-os"
+  },
+  "homepage": "https://qualixar.com",
+  "files": [
+    "plugin.json",
+    "commands/",
+    "skills/",
+    "agents/",
+    "README.md"
+  ]
+}

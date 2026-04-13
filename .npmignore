@@ -1,0 +1,76 @@
+# Source maps — never publish (code reconstruction risk)
+**/*.js.map
+**/*.d.ts.map
+
+# Source code
+src/
+tests/
+dashboard/
+
+# Dev configs
+.env
+.env.*
+tsconfig.json
+vitest.config.*
+eslint.config.*
+.eslintrc*
+.prettierrc*
+
+# Plans, research, internal docs
+.backup/
+plan/
+lld/
+research/
+docs/
+report/
+
+# Git and IDE
+.git/
+.github/
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Session and memory files
+SESSION_HANDOFF*
+EXECUTION-TRACKER*
+
+# Task output artifacts (UUID dirs, logs)
+????????-????-????-????-????????????/
+.qos-log/
+qos-output/
+
+# Large media files
+*.mp4
+
+# Knowledge graph / analysis artifacts
+graphify-out/
+.gitnexus/
+.claude/
+
+# Monorepo sub-packages (published separately)
+packages/
+
+# Deployment configs (not needed by npm users)
+docker/
+deploy/
+docker-compose.yml
+Dockerfile
+
+# Benchmarks and internal tools
+benchmarks/
+scripts/
+
+# Database files
+*.db
+*.db-journal
+*.db-wal
+
+# Playwright/MCP test artifacts
+.playwright-mcp/
+
+# Dead legacy bin entry
+bin/qclaw.js

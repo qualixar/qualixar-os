@@ -1,0 +1,16 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.qualixar/qualixar-os",
+  "description": "The Universal OS for AI Agents. Forge auto-designs multi-agent teams. 13 topologies. Skill marketplace. Cost routing. Claw-compatible.",
+  "vendor": "Qualixar",
+  "sourceUrl": "https://github.com/qualixar/qualixar-os",
+  "homepage": "https://qualixar.com",
+  "license": "FSL-1.1-ALv2",
+  "packages": [
+    {
+      "type": "npm",
+      "package": "qualixar-os",
+      "transport": "stdio"
+    }
+  ]
+}

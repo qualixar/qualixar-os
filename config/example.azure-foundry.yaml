@@ -1,0 +1,76 @@
+# Example: Azure AI Foundry Configuration
+# Copy to ~/.qualixar-os/config.yaml and set your env vars
+
+mode: companion
+
+providers:
+  azure:
+    type: azure-openai
+    endpoint: https://your-resource.cognitiveservices.azure.com/
+    api_key_env: AZURE_AI_API_KEY
+    api_version: "2024-10-21"
+
+models:
+  primary: azure/claude-sonnet-4-6
+  fallback: azure/gpt-5.4-mini
+  judge: azure/claude-opus-4-6
+  catalog:
+    - name: azure/claude-opus-4-6
+      provider: azure
+      deployment: claude-opus-4-6
+      quality_score: 0.98
+      cost_per_input_token: 0.000015
+      cost_per_output_token: 0.000075
+      max_tokens: 4096
+    - name: azure/claude-sonnet-4-6
+      provider: azure
+      deployment: claude-sonnet-4-6
+      quality_score: 0.92
+      cost_per_input_token: 0.000003
+      cost_per_output_token: 0.000015
+      max_tokens: 8192
+    - name: azure/gpt-5.3-chat
+      provider: azure
+      deployment: gpt-5.3-chat
+      quality_score: 0.95
+      cost_per_input_token: 0.000005
+      cost_per_output_token: 0.000015
+      max_tokens: 32768
+    - name: azure/gpt-5.4-mini
+      provider: azure
+      deployment: gpt-5.4-mini
+      quality_score: 0.86
+      cost_per_input_token: 0.0000004
+      cost_per_output_token: 0.0000016
+      max_tokens: 16384
+
+budget:
+  max_usd: 5.0
+  warn_pct: 0.8
+
+security:
+  container_isolation: false
+  allowed_paths: ['./']
+
+memory:
+  enabled: true
+  auto_invoke: true
+
+dashboard:
+  enabled: true
+  port: 3333
+
+channels:
+  mcp: true
+  http:
+    enabled: true
+    port: 3000
+  telegram:
+    enabled: false
+  discord:
+    enabled: false
+  webhook:
+    enabled: false
+
+observability:
+  log_level: info

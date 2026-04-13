@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+.npm
+
+# Build output
+dist/
+
+# Internal docs (LLDs, plans, sessions, research, reports)
+.backup/
+
+# Test artifacts
+coverage/
+__pycache__/
+*.pyc
+.vitest/
+
+# Database (user data, not shipped)
+*.db
+*.db-journal
+*.db-wal
+
+# Environment & secrets
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# QOS task output artifacts (created during task execution)
+# UUID directories: task working dirs with agent outputs
+????????-????-????-????-????????????/
+.qos-log/
+qos-output/
+
+# Large media files (demo videos uploaded elsewhere)
+*.mp4
+
+# Playwright/MCP test artifacts
+.playwright-mcp/
+.backup/attribution/signer_key*
+.backup/attribution/*.ots
+.gitnexus/
+.claude/skills/generated/
+graphify-out/
+
+# Stray tilde directory (from unexpanded ~ in workspace config)
+~/
+
+# Code analysis artifacts
+.code-review-graph/
+
+# Python test/lint caches
+.pytest_cache/
+.ruff_cache/
+
+# VS Code extension (not ready for public yet)
+vscode-ext/

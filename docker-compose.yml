@@ -1,0 +1,77 @@
+networks:
+  qos-network:
+    driver: bridge
+
+services:
+  # ---------- Production ----------
+  qos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qos
+    ports:
+      - "${QOS_HTTP_PORT:-3000}:3000"
+      - "${QOS_DASHBOARD_PORT:-3333}:3333"
+    volumes:
+      - ${HOME}/.qualixar-os:/home/qos/.qualixar-os
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - QOS_HTTP_PORT=3000
+      - QOS_MODE=${QOS_MODE:-companion}
+      - QOS_LOG_LEVEL=${QOS_LOG_LEVEL:-info}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - qos-network
+    # --- Security hardening ---
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:size=256M,noexec,nosuid
+    cap_drop:
+      - ALL
+    mem_limit: 2g
+    memswap_limit: 2g
+    pids_limit: 256
+
+  # ---------- Development ----------
+  qos-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: qos-dev
+    ports:
+      - "${QOS_DEV_PORT:-3001}:3000"
+      - "${QOS_DEV_DASHBOARD_PORT:-3334}:3333"
+    volumes:
+      - .:/build
+      - /build/node_modules
+      - ${HOME}/.qualixar-os:/root/.qualixar-os
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - QOS_HTTP_PORT=3000
+      - QOS_MODE=${QOS_MODE:-power}
+      - QOS_LOG_LEVEL=${QOS_LOG_LEVEL:-debug}
+    command: ["npx", "tsx", "--watch", "src/channels/cli.ts", "serve"]
+    networks:
+      - qos-network
+    profiles:
+      - dev
+    # --- Security hardening (relaxed for dev) ---
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 4g
+    pids_limit: 512

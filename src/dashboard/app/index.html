@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qualixar OS Dashboard</title>
+    <style>
+      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; }
+    </style>
+    <!-- FOUC prevention: apply theme class before React renders -->
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('qos-theme') || 'system';
+          var d = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.add(
+            t === 'dark' || (t === 'system' && d) ? 'dark' : 'light'
+          );
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+version: 1
+name: sample-deerflow-agent
+topology: supervisor
+agents:
+  - role: researcher
+    model: gpt-4.1-mini
+    tools: [web_search, crawl]
+  - role: writer
+    model: claude-sonnet-4-6
+    tools: []

@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  qos:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: qos
+    ports:
+      - "${QOS_HTTP_PORT:-8421}:8421"
+      - "${QOS_DASHBOARD_PORT:-3333}:3333"
+    volumes:
+      - qos-data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://host.docker.internal:11434}
+      - QOS_MODE=${QOS_MODE:-companion}
+      - QOS_HTTP_PORT=8421
+      - QOS_LOG_LEVEL=${QOS_LOG_LEVEL:-info}
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8421/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  qos-data:
+    driver: local

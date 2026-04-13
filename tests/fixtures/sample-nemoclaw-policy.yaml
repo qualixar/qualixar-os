@@ -1,0 +1,22 @@
+version: 1
+name: nemoclaw-security-policy
+extends: companion-defaults
+agent:
+  role: security-guardian
+  model: claude-sonnet-4-6
+  instructions: Enforce security policies defined in rules
+  tools:
+    - policy_checker
+rules:
+  - name: deny_shell
+    action: deny
+    priority: 100
+    conditions:
+      type: shell_command
+      pattern: "rm -rf|sudo"
+  - name: allow_read
+    action: allow
+    priority: 50
+    conditions:
+      type: file_access
+      path_prefix: "./src/"

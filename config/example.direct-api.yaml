@@ -1,0 +1,16 @@
+# Example: Direct API Keys Configuration
+# For users with Anthropic/OpenAI/Google API keys
+
+mode: companion
+
+providers:
+  anthropic:
+    type: anthropic
+    api_key_env: ANTHROPIC_API_KEY
+  openai:
+    type: openai
+    api_key_env: OPENAI_API_KEY
+
+models:
+  primary: claude-sonnet-4-6
+  fallback: gpt-4.1-mini

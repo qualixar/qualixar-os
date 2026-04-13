@@ -1,0 +1,49 @@
+{
+  "$schema": "https://smithery.ai/schemas/server-listing-v1.json",
+  "name": "qualixar-os",
+  "displayName": "Qualixar OS",
+  "description": "The Universal OS for AI Agents. Forge auto-designs multi-agent teams. 13 topologies. Skill marketplace. Cost routing. Judge pipeline. Claw-compatible.",
+  "author": "qualixar",
+  "version": "2.1.1",
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://qualixar.com",
+  "repository": "https://github.com/qualixar/qualixar-os",
+  "categories": ["orchestration", "multi-agent", "developer-tools"],
+  "tags": [
+    "agent-os", "forge", "multi-agent", "orchestration",
+    "claw-compatible", "openclaw", "marketplace",
+    "judge", "quality", "cost-routing", "mcp"
+  ],
+  "installation": {
+    "local": {
+      "command": "npx",
+      "args": ["qualixar-os", "--mcp"]
+    }
+  },
+  "tools": [
+    {
+      "name": "qos_task",
+      "description": "Task lifecycle: run, status, cancel, pause, resume, steer, list, output"
+    },
+    {
+      "name": "qos_agents",
+      "description": "Agents & Forge: list active agents, inspect, design teams, list topologies"
+    },
+    {
+      "name": "qos_system",
+      "description": "System: config get/set, model list, cost summary"
+    },
+    {
+      "name": "qos_context",
+      "description": "Context & workspace: add context, scan, list, set workspace, list files"
+    },
+    {
+      "name": "qos_quality",
+      "description": "Quality & memory: judge results, memory search, memory store"
+    },
+    {
+      "name": "qos_workspace",
+      "description": "Workspace: set directory, list files, import agent from other frameworks"
+    }
+  ]
+}

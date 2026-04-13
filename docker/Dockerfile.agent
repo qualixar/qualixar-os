@@ -1,0 +1,8 @@
+FROM node:22-alpine
+WORKDIR /workspace
+COPY dist/engine/ ./dist/engine/
+COPY dist/router/ ./dist/router/
+COPY dist/types/ ./dist/types/
+COPY dist/utils/ ./dist/utils/
+ENV NODE_ENV=production
+CMD ["node", "dist/engine/agent-runner.js"]

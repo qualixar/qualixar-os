@@ -1,0 +1,47 @@
+[project]
+name = "qualixar-os-adapters"
+version = "2.0.0"
+description = "Python adapters for Qualixar OS agent operating system"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Qualixar", email = "hello@qualixar.com" }]
+readme = "README.md"
+keywords = ["agent", "ai", "llm", "orchestration", "qualixar-os"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = ["httpx>=0.27"]
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.3"]
+crewai = ["crewai>=0.80"]
+autogen = ["autogen-agentchat>=0.4"]
+adk = ["google-adk>=1.0"]
+all = [
+    "langchain-core>=0.3",
+    "crewai>=0.80",
+    "autogen-agentchat>=0.4",
+    "google-adk>=1.0",
+]
+dev = ["pytest>=8.0", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.backends"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["../tests/adapters"]

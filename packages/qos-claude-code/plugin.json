@@ -1,0 +1,43 @@
+{
+  "name": "qos-claude-code",
+  "displayName": "QOS Claude Code",
+  "version": "2.1.1",
+  "description": "Claude Code plugin for Qualixar OS — submit tasks, design agent teams with Forge, browse workspaces, and manage the skill marketplace.",
+  "author": "qualixar",
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://qualixar.com",
+  "repository": "https://github.com/qualixar/qualixar-os",
+  "provides": {
+    "skills": [
+      "skills/task-orchestrator.md"
+    ],
+    "commands": [
+      "commands/qos-task.md",
+      "commands/qos-forge.md",
+      "commands/qos-status.md",
+      "commands/qos-workspace.md",
+      "commands/qos-marketplace.md"
+    ],
+    "agents": [
+      {
+        "name": "qos-orchestrator",
+        "description": "Manages Qualixar OS tasks — submit, monitor, and inspect agent-generated work.",
+        "model": "sonnet",
+        "tools": ["Bash", "Read", "Write", "Grep", "Glob"],
+        "systemPrompt": "agents/qos-orchestrator.md",
+        "role": "orchestrator"
+      }
+    ],
+    "mcp": {
+      "command": "npx",
+      "args": ["qualixar-os", "--mcp"]
+    }
+  },
+  "requires": {
+    "claude-code": ">=1.0.0"
+  },
+  "keywords": [
+    "agent-os", "forge", "multi-agent", "marketplace",
+    "qualixar-os", "qos-compatible", "orchestration"
+  ]
+}

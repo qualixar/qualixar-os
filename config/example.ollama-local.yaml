@@ -1,0 +1,22 @@
+# Example: Local Ollama Configuration
+# For users running Ollama locally (zero cost)
+
+mode: companion
+
+providers:
+  local:
+    type: ollama
+    endpoint: http://localhost:11434
+
+models:
+  primary: local/llama3
+  fallback: local/mistral
+  catalog:
+    - name: local/llama3
+      provider: local
+      deployment: llama3
+      quality_score: 0.60
+    - name: local/mistral
+      provider: local
+      deployment: mistral
+      quality_score: 0.55

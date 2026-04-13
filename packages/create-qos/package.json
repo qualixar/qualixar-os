@@ -1,0 +1,41 @@
+{
+  "name": "create-qualixar-os",
+  "version": "0.1.0",
+  "description": "Create a new Qualixar OS project — The Universal Agent Orchestration Layer",
+  "type": "module",
+  "bin": {
+    "create-qualixar-os": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.9.0",
+    "chalk": "^5.4.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0",
+    "vitest": "^3.0.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "qos",
+    "qualixar",
+    "agent",
+    "orchestration",
+    "mcp",
+    "ai"
+  ],
+  "license": "MIT"
+}

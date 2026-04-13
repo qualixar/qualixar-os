@@ -1,0 +1,101 @@
+{
+  "name": "qualixar-os",
+  "displayName": "Qualixar OS",
+  "version": "2.2.0",
+  "description": "The Universal OS for AI Agents. Design multi-agent teams with Forge, browse skills, monitor costs, and integrate with Claude Code Agent Teams — all from Claude Code.",
+  "author": "qualixar",
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://qualixar.com",
+  "repository": "https://github.com/qualixar/qualixar-os",
+  "provides": {
+    "skills": [
+      "skills/forge-design.md",
+      "skills/code-review.md",
+      "skills/research.md",
+      "skills/marketplace.md",
+      "skills/agent-teams.md",
+      "skills/task-orchestrator.md"
+    ],
+    "hooks": {
+      "PreToolUse": [
+        "hooks/cost-tracker.sh"
+      ],
+      "PostToolUse": [
+        "hooks/cost-tracker.sh",
+        "hooks/audit-log.sh"
+      ],
+      "TeammateIdle": ["hooks/teammate-idle.sh"],
+      "TaskCreated": ["hooks/task-created.sh"],
+      "TaskCompleted": ["hooks/task-completed.sh"]
+    },
+    "commands": [
+      "commands/qos-forge.md",
+      "commands/qos-marketplace.md",
+      "commands/qos-status.md",
+      "commands/qos-task.md",
+      "commands/qos-workspace.md"
+    ],
+    "agents": [
+      {
+        "name": "qos-forge-architect",
+        "description": "Designs optimal multi-agent teams using Qualixar OS Forge.",
+        "model": "opus",
+        "tools": ["Bash", "Read", "Write", "mcp__qualixar-os__qos_agents", "mcp__qualixar-os__qos_tools"],
+        "systemPrompt": "agents/qos-forge-architect.md",
+        "role": "architect"
+      },
+      {
+        "name": "qos-code-reviewer",
+        "description": "Multi-judge code review using Qualixar OS debate topology.",
+        "model": "sonnet",
+        "tools": ["Bash", "Read", "Grep", "Glob", "mcp__qualixar-os__qos_agents"],
+        "systemPrompt": "agents/qos-code-reviewer.md",
+        "role": "reviewer"
+      },
+      {
+        "name": "qos-cost-optimizer",
+        "description": "Budget-aware task routing using Qualixar OS cost engine.",
+        "model": "haiku",
+        "tools": ["Bash", "Read", "mcp__qualixar-os__qos_cost", "mcp__qualixar-os__qos_agents"],
+        "systemPrompt": "agents/qos-cost-optimizer.md",
+        "role": "optimizer"
+      },
+      {
+        "name": "qos-topology-designer",
+        "description": "Selects the optimal agent topology from 12 built-in topologies.",
+        "model": "sonnet",
+        "tools": ["Bash", "Read", "mcp__qualixar-os__qos_agents"],
+        "systemPrompt": "agents/qos-topology-designer.md",
+        "role": "designer"
+      },
+      {
+        "name": "qos-research-agent",
+        "description": "Deep research agent using multi-provider routing.",
+        "model": "opus",
+        "tools": ["Bash", "Read", "Write", "WebSearch", "WebFetch"],
+        "systemPrompt": "agents/qos-research-agent.md",
+        "role": "researcher"
+      },
+      {
+        "name": "qos-quality-judge",
+        "description": "Quality gating judge with multi-judge consensus pipeline.",
+        "model": "opus",
+        "tools": ["Bash", "Read", "Grep", "Glob", "mcp__qualixar-os__qos_agents"],
+        "systemPrompt": "agents/qos-quality-judge.md",
+        "role": "judge"
+      }
+    ],
+    "mcp": {
+      "command": "npx",
+      "args": ["qualixar-os", "--mcp"]
+    }
+  },
+  "requires": {
+    "claude-code": ">=1.0.0"
+  },
+  "keywords": [
+    "agent-os", "forge", "multi-agent", "marketplace",
+    "qualixar-os", "qos-compatible", "openclaw", "claw-compatible",
+    "orchestration", "agent-teams", "subagents", "quality-gates"
+  ]
+}

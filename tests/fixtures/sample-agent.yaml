@@ -1,0 +1,8 @@
+name: test-git-agent
+description: Test GitAgent for E2E
+version: "1.0"
+agents:
+  - role: developer
+    model: mock-model
+    tools:
+      - bash

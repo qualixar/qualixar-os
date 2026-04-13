@@ -1,0 +1,21 @@
+{
+  "name": "qualixar-os",
+  "displayName": "Qualixar OS",
+  "description": "The Universal OS for AI Agents. Works with Cursor's Composer for multi-agent orchestration, Forge team design, and skill marketplace.",
+  "version": "2.1.1",
+  "publisher": "qualixar",
+  "type": "mcp",
+  "mcp": {
+    "command": "npx",
+    "args": ["qualixar-os", "--mcp"]
+  },
+  "tools": [
+    "qos_task — Run, pause, cancel, steer agent tasks",
+    "qos_agents — Forge team design, list agents, topologies",
+    "qos_system — Config, models, cost tracking",
+    "qos_context — Workspace management, file context",
+    "qos_quality — Judge verdicts, memory search",
+    "qos_workspace — Import agents from OpenClaw/NemoClaw/DeerFlow"
+  ],
+  "keywords": ["agent-os", "forge", "multi-agent", "claw-compatible"]
+}

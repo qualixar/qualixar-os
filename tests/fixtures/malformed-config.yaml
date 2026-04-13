@@ -1,0 +1,3 @@
+this is not: valid yaml: because: nested colons: break: parsing
+  - also invalid
+    indentation: [broken

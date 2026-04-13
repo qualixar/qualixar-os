@@ -1,0 +1,21 @@
+{
+  "name": "qualixar-os",
+  "title": "Qualixar OS — The Universal OS for AI Agents",
+  "description": "Complete agent operating system. Forge auto-designs multi-agent teams. 13 topologies. Skill marketplace. Cost routing. Judge pipeline. 24-tab dashboard. Compatible with OpenClaw, NemoClaw, DeerFlow, LangChain, CrewAI, AutoGen.",
+  "author": "qualixar",
+  "version": "2.1.1",
+  "license": "FSL-1.1-ALv2",
+  "install": {
+    "claude-code": "claude mcp add qualixar-os -- npx qualixar-os --mcp",
+    "cursor": "npx qualixar-os --mcp",
+    "vscode": "npx qualixar-os --mcp",
+    "windsurf": "npx qualixar-os --mcp",
+    "cline": "npx qualixar-os --mcp"
+  },
+  "pricing": "free",
+  "category": "developer-tools",
+  "tags": [
+    "agent-os", "multi-agent", "forge", "orchestration",
+    "openclaw", "claw", "marketplace", "mcp", "a2a"
+  ]
+}

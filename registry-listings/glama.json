@@ -1,0 +1,29 @@
+{
+  "name": "qualixar-os",
+  "displayName": "Qualixar OS — Universal Agent OS",
+  "description": "The complete operating system for AI agents. Design multi-agent teams with Forge AI, browse a skill marketplace, monitor costs, run 13 execution topologies. Compatible with OpenClaw, NemoClaw, DeerFlow, LangChain, CrewAI.",
+  "author": "Qualixar",
+  "version": "2.1.1",
+  "license": "FSL-1.1-ALv2",
+  "homepage": "https://qualixar.com",
+  "sourceUrl": "https://github.com/qualixar/qualixar-os",
+  "category": "developer-tools",
+  "subcategories": ["orchestration", "multi-agent", "ai-agents"],
+  "transport": "stdio",
+  "command": "npx qualixar-os --mcp",
+  "authentication": "none",
+  "tools": 6,
+  "toolNames": [
+    "qos_task", "qos_agents", "qos_system",
+    "qos_context", "qos_quality", "qos_workspace"
+  ],
+  "features": [
+    "Forge AI team designer — auto-designs agent teams from a prompt",
+    "13 execution topologies (sequential, parallel, debate, DAG, hybrid, etc.)",
+    "Skill marketplace with one-click install",
+    "Judge pipeline with consensus protocols",
+    "Cost routing with per-agent budget tracking",
+    "Claw Bridge — import OpenClaw, NemoClaw, DeerFlow agents",
+    "24-tab production dashboard"
+  ]
+}

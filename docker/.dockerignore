@@ -1,0 +1,13 @@
+node_modules
+coverage
+.git
+*.db
+*.db-journal
+tests
+lld
+lld-research
+plan
+research
+.backup
+SESSION_HANDOFF_*.md
+EXECUTION-*.md
