@@ -1,5 +1,5 @@
 [![License: FSL-1.1](https://img.shields.io/badge/License-FSL--1.1-blue.svg)](https://fsl.software)
-[![Tests: 2,868 passing](https://img.shields.io/badge/Tests-2%2C868_passing-brightgreen)](https://github.com/qualixar/qualixar-os)
+[![Tests: 2,936 passing](https://img.shields.io/badge/Tests-2%2C936_passing-brightgreen)](https://github.com/qualixar/qualixar-os)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
 [![arXiv](https://img.shields.io/badge/arXiv-2604.06392-b31b1b)](https://arxiv.org/abs/2604.06392)
@@ -20,11 +20,11 @@ To our knowledge, no other agent platform combines all of these:
 | Capability | Why It Matters |
 |---|---|
 | **Forge AI** auto-designs agent teams | Describe what you need in one sentence. Forge picks the agents, tools, topology, and budget. No manual team assembly. |
-| **Judge pipeline** with consensus | Adversarial quality assurance — agents don't just run, they get evaluated. Multi-judge consensus protocols catch bad output. |
+| **Judge pipeline** with consensus | Adversarial quality assurance built on [AgentAssert](https://agentassert.com) research ([arXiv:2602.22302](https://arxiv.org/abs/2602.22302)). Multi-judge consensus, few-shot calibration, reliability scoring. |
 | **13 topologies** including Hybrid | PII-safe local/cloud split. Your sensitive data stays on your machine while cloud handles the rest. |
 | **Native A2A protocol** | Agents talk to agents — internally and externally. Agent card discovery at `/.well-known/agent-card`. Among the first agent runtimes to support both MCP and A2A natively. |
 | **25 CLI commands** | Full native CLI, not just a wrapper. Task execution, marketplace, diagnostics, config, server management — all from your terminal. |
-| **SLM-Lite memory** | Learns from every task. 4-layer memory store powered by SuperLocalMemory. Context retrieval is automatic. |
+| **SLM-Lite memory** | Learns from every task. 4-layer memory store powered by [SuperLocalMemory](https://superlocalmemory.com) — backed by 3 peer-reviewed papers ([arXiv:2604.04514](https://arxiv.org/abs/2604.04514), [arXiv:2603.14588](https://arxiv.org/abs/2603.14588), [arXiv:2603.02240](https://arxiv.org/abs/2603.02240)). |
 | **Real file output** | Agents create runnable code on disk, not just text in a chat window. Universal Type-C protocol writes real artifacts. |
 | **Marketplace** with one-click install | Browse, search, install tools. Forge auto-discovers new tools the moment you install them. |
 | **Universal compatibility** | Import agents from OpenClaw, NemoClaw, DeerFlow, and GitAgent natively. LangChain, CrewAI, and AutoGen integrate via the HTTP API. |
@@ -62,8 +62,8 @@ Agent frameworks give you building blocks. Qualixar OS gives you the **complete 
 |---|---|---|
 | Route to the right model | Write custom logic | Built-in (15 providers, cost/quality/latency routing) |
 | Run multi-agent teams | Build from scratch | 13 topologies, auto-designed by Forge AI |
-| Quality assurance | Hope for the best | Judge pipeline with consensus protocols |
-| Persistent memory | Add a vector DB | 4-layer memory store powered by SuperLocalMemory Lite (local) |
+| Quality assurance | Hope for the best | Judge pipeline with consensus protocols (built on [AgentAssert](https://agentassert.com) research) |
+| Persistent memory | Add a vector DB | 4-layer memory store powered by [SuperLocalMemory](https://superlocalmemory.com) (local, 3 papers) |
 | Monitor costs | Check your bill later | Real-time budget tracking per agent |
 | Manage tools | Hardcode per agent | Marketplace with categories, one-click install |
 | Dashboard | Build your own | 24 tabs, production-ready |
@@ -175,7 +175,7 @@ POST /a2a/tasks
 
 ## Memory System — SLM-Lite
 
-Powered by SLM-Lite (SuperLocalMemory Lite). Every task makes Qualixar OS smarter.
+Powered by [SuperLocalMemory](https://superlocalmemory.com) Lite — the same cognitive memory engine backed by 3 peer-reviewed papers ([V3.3](https://arxiv.org/abs/2604.04514), [V3](https://arxiv.org/abs/2603.14588), [V2](https://arxiv.org/abs/2603.02240)). Every task makes Qualixar OS smarter.
 
 | Layer | What It Does |
 |-------|-------------|
@@ -410,7 +410,7 @@ Full reference: [docs/cli/overview.md](docs/cli/overview.md)
 | Database | better-sqlite3 (49 tables) |
 | Dashboard | React 19 + Vite |
 | AI SDKs | Anthropic (incl. Managed Agents), OpenAI, Azure, Ollama |
-| Testing | Vitest (2,868 tests, 203 files) |
+| Testing | Vitest (2,936 tests, 213 files) |
 | Protocols | MCP, A2A, HTTP, WebSocket, CLI |
 
 ## Development
@@ -420,18 +420,37 @@ git clone https://github.com/qualixar/qualixar-os.git
 cd qualixar-os
 npm install
 npm run build
-npm test              # 2,868 tests
+npm test              # 2,936 tests
 npm run typecheck     # 0 errors
 ```
 
-## Paper
+## Research Ecosystem — 7 Peer-Reviewed Papers
 
-"Qualixar OS: A Protocol-Unified Operating System for AI Agent Orchestration"
+Qualixar OS is not a standalone project. Every major component is backed by peer-reviewed research. To our knowledge, no other agent runtime ships with this level of academic rigor across its subsystems.
 
-arXiv: [2604.06392](https://arxiv.org/abs/2604.06392)
-DOI: [10.5281/zenodo.19454219](https://doi.org/10.5281/zenodo.19454219)
+### How the Research Maps to the Product
 
-20 pages, 7 figures, formal topology semantics, empirical evaluation. Part of the Qualixar research ecosystem — 7 published papers on AI agent reliability.
+| QOS Component | Powered By | Research |
+|---|---|---|
+| **Judge Pipeline** | [AgentAssert](https://agentassert.com) — contract-based reliability testing, LLM-as-Judge evaluation, SPRT statistical certification, reliability index Theta | [arXiv:2602.22302](https://arxiv.org/abs/2602.22302) |
+| **SLM-Lite Memory** | [SuperLocalMemory](https://superlocalmemory.com) — 4-layer cognitive memory with information-geometric retrieval and privacy-preserving local storage | [arXiv:2604.04514](https://arxiv.org/abs/2604.04514), [arXiv:2603.14588](https://arxiv.org/abs/2603.14588), [arXiv:2603.02240](https://arxiv.org/abs/2603.02240) |
+| **Quality Evaluation** | [AgentAssay](https://github.com/qualixar/agentassay) — standardized evaluation adapters for 10+ agent frameworks | [arXiv:2603.02601](https://arxiv.org/abs/2603.02601) |
+| **Skill Verification** | [SkillFortify](https://github.com/qualixar/skillfortify) — 22 testing frameworks for agent skills, 100% precision | [arXiv:2603.00195](https://arxiv.org/abs/2603.00195) |
+| **Forge AI + Topologies** | Qualixar OS native — POMDP-based team design, 13 formally specified topologies | [arXiv:2604.06392](https://arxiv.org/abs/2604.06392) |
+
+### All 7 Papers
+
+| # | Paper | Focus | arXiv |
+|---|-------|-------|-------|
+| 1 | **Qualixar OS** — A Protocol-Unified Operating System for AI Agent Orchestration | Topology semantics, Forge AI, agent runtime architecture | [2604.06392](https://arxiv.org/abs/2604.06392) |
+| 2 | **SuperLocalMemory V3.3** — The Living Brain | Unified memory + learning, pattern extraction, behavioral assertions | [2604.04514](https://arxiv.org/abs/2604.04514) |
+| 3 | **SuperLocalMemory V3** — Information-Geometric Memory | Fisher-Rao distance, multi-channel retrieval, graph-enhanced recall | [2603.14588](https://arxiv.org/abs/2603.14588) |
+| 4 | **SuperLocalMemory V2** — Privacy-Preserving Local Memory | Local-first cognitive memory, SQLite, semantic indexing | [2603.02240](https://arxiv.org/abs/2603.02240) |
+| 5 | **AgentAssert** — Contract-Based Reliability Testing for AI Agents | ContractSpec DSL, drift detection, SPRT certification, LLM-as-Judge | [2602.22302](https://arxiv.org/abs/2602.22302) |
+| 6 | **AgentAssay** — Standardized Agent Evaluation | 10 framework adapters, unified evaluation protocol | [2603.02601](https://arxiv.org/abs/2603.02601) |
+| 7 | **SkillFortify** — Testing Frameworks for Agent Skills | 22 test frameworks, mutation testing, 100% precision | [2603.00195](https://arxiv.org/abs/2603.00195) |
+
+### Cite
 
 If you use Qualixar OS in your research, please cite:
 
@@ -477,4 +496,13 @@ Copyright (c) 2026 Varun Pratap Bhardwaj / Qualixar.
 
 [Qualixar](https://qualixar.com) — AI Agent Reliability Engineering.
 
-7 published papers. 4 live tools. One mission: make AI agents trustworthy.
+7 published papers. 6 live products. One mission: make AI agents trustworthy.
+
+| Product | What It Does | Links |
+|---------|-------------|-------|
+| **Qualixar OS** | Agent operating system — this repo | [GitHub](https://github.com/qualixar/qualixar-os) · [npm](https://www.npmjs.com/package/qualixar-os) |
+| **SuperLocalMemory** | Cognitive memory for AI agents | [GitHub](https://github.com/qualixar/superlocalmemory) · [npm](https://www.npmjs.com/package/superlocalmemory) · [superlocalmemory.com](https://superlocalmemory.com) |
+| **AgentAssert** | Contract-based reliability testing | [GitHub](https://github.com/qualixar/agentassert-abc) · [PyPI](https://pypi.org/project/agentassert-abc/) · [agentassert.com](https://agentassert.com) |
+| **AgentAssay** | Standardized agent evaluation | [GitHub](https://github.com/qualixar/agentassay) · [PyPI](https://pypi.org/project/agentassay/) |
+| **SkillFortify** | Agent skill testing frameworks | [GitHub](https://github.com/qualixar/skillfortify) · [PyPI](https://pypi.org/project/skillfortify/) |
+| **SLM Mesh** | P2P agent communication | [GitHub](https://github.com/qualixar/slm-mesh) · [npm](https://www.npmjs.com/package/slm-mesh) |
