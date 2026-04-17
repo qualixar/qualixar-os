@@ -506,3 +506,33 @@ Copyright (c) 2026 Varun Pratap Bhardwaj / Qualixar.
 | **AgentAssay** | Standardized agent evaluation | [GitHub](https://github.com/qualixar/agentassay) · [PyPI](https://pypi.org/project/agentassay/) |
 | **SkillFortify** | Agent skill testing frameworks | [GitHub](https://github.com/qualixar/skillfortify) · [PyPI](https://pypi.org/project/skillfortify/) |
 | **SLM Mesh** | P2P agent communication | [GitHub](https://github.com/qualixar/slm-mesh) · [npm](https://www.npmjs.com/package/slm-mesh) |
+
+---
+
+## ⭐ Support This Project
+
+If this project solves a real problem for you, **please star the repo** — it helps other developers discover Qualixar and signals that the AI agent reliability community is growing. Every star matters.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=qualixar/qualixar-os&type=Date)](https://star-history.com/#qualixar/qualixar-os&Date)
+
+---
+
+## Part of the Qualixar AI Agent Reliability Platform
+
+Qualixar is building the open-source infrastructure for AI agent reliability engineering. Seven products, seven peer-reviewed papers, one coherent platform. Each tool solves one reliability pillar:
+
+| Product | Purpose | Install | Paper |
+|---------|---------|---------|-------|
+| **[SuperLocalMemory](https://github.com/qualixar/superlocalmemory)** | Persistent memory + learning for AI agents | `npx superlocalmemory` | [arXiv:2604.04514](https://arxiv.org/abs/2604.04514) |
+| **[Qualixar OS](https://github.com/qualixar/qualixar-os)** | Universal agent runtime (13 execution topologies) | `npx qualixar-os` | [arXiv:2604.06392](https://arxiv.org/abs/2604.06392) |
+| **[SLM Mesh](https://github.com/qualixar/slm-mesh)** | P2P coordination across AI agent sessions | `npm i slm-mesh` | — |
+| **[SLM MCP Hub](https://github.com/qualixar/slm-mcp-hub)** | Federate 430+ MCP tools through one gateway | `pip install slm-mcp-hub` | — |
+| **[AgentAssay](https://github.com/qualixar/agentassay)** | Token-efficient AI agent testing | `pip install agentassay` | [arXiv:2603.02601](https://arxiv.org/abs/2603.02601) |
+| **[AgentAssert](https://github.com/qualixar/agentassert-abc)** | Behavioral contracts + drift detection | `pip install agentassert` | [arXiv:2602.22302](https://arxiv.org/abs/2602.22302) |
+| **[SkillFortify](https://github.com/qualixar/skillfortify)** | Formal verification for AI agent skills | `pip install skillfortify` | [arXiv:2603.00195](https://arxiv.org/abs/2603.00195) |
+
+**Zero cloud dependency. Local-first. EU AI Act compliant.**
+
+Start here → **[qualixar.com](https://qualixar.com)** · [All papers on Qualixar HuggingFace](https://huggingface.co/Qualixar)
+
+---

@@ -1,6 +1,6 @@
 {
   "name": "qualixar-os",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Qualixar OS: The Universal OS for AI Agents. One platform, every model, every framework, every transport.",
   "type": "module",
   "main": "./dist/index.js",
