@@ -13,6 +13,8 @@ One platform. Every model. Every framework. Every transport.
 
 Qualixar OS is the operating system that runs AI agents — yours and everyone else's. It doesn't replace your agent framework. It powers it. Import agents from OpenClaw, NemoClaw, DeerFlow, CrewAI, LangGraph, or build native. Run them all through one dashboard, one config, one runtime.
 
+*A [Qualixar](https://qualixar.com) Research Initiative by [Varun Pratap Bhardwaj](https://varunpratap.com)*
+
 ## What Makes This Unique
 
 To our knowledge, no other agent platform combines all of these:
