@@ -1,4 +1,6 @@
 [![License: FSL-1.1](https://img.shields.io/badge/License-FSL--1.1-blue.svg)](https://fsl.software)
+
+[![Deploy to Railyard](https://app.railyard.run/deploy/badge)](https://app.railyard.run/deploy?repo=https://github.com/qualixar/qualixar-os)
 [![Tests: 2,936 passing](https://img.shields.io/badge/Tests-2%2C936_passing-brightgreen)](https://github.com/qualixar/qualixar-os)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
